@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,6 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mET-Bj-Hnh">
+                                <color key="backgroundColor" red="1" green="0.78513604402542114" blue="0.070313014090061188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="G1B-Fg-V3L"/>
                                     <barButtonItem title="New" id="uWz-4f-E8E">
@@ -41,6 +43,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Text Snippet Entry View Controller-->
+        <scene sceneID="SzZ-AL-ULN">
+            <objects>
+                <viewController storyboardIdentifier="textSnippetEntry" id="rzh-nO-O7f" customClass="TextSnippetEntryViewController" customModule="Snippets" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kij-yb-RWk"/>
+                        <viewControllerLayoutGuide type="bottom" id="5BA-jg-Epn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LZE-yP-eGo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Wo-U8-kHc">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="rzh-nO-O7f" id="o4k-qd-yQX"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.78513604402542114" blue="0.070313014090061188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Wo-U8-kHc" secondAttribute="trailing" id="1qs-Cr-Mf6"/>
+                            <constraint firstItem="4Wo-U8-kHc" firstAttribute="top" secondItem="Kij-yb-RWk" secondAttribute="bottom" constant="8" id="5jV-MN-aoW"/>
+                            <constraint firstItem="5BA-jg-Epn" firstAttribute="top" secondItem="4Wo-U8-kHc" secondAttribute="bottom" constant="20" id="EUr-qs-16l"/>
+                            <constraint firstItem="4Wo-U8-kHc" firstAttribute="leading" secondItem="LZE-yP-eGo" secondAttribute="leadingMargin" id="stl-ai-S9x"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="4Wo-U8-kHc" id="E7m-hc-Q4K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3PY-Hc-q5I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="646" y="107"/>
         </scene>
     </scenes>
 </document>
