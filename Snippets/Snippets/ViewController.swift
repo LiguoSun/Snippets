@@ -25,8 +25,26 @@ class ViewController: UIViewController {
 
 
     @IBAction func createNewSnippet(_ sender: AnyObject) {
-        let newSnippet = SnippetData()
-        data.append(newSnippet)
+        let alert = UIAlertController(title: "Select a sippet type",
+                                      message: nil,
+                                      preferredStyle: .alert)
+        let textAction = UIAlertAction(title: "Text",
+                                       style: .default){
+                                        (alert: UIAlertAction!) -> Void in
+                                        self.data.append(SnippetData(snippetType: .text))
+        }
+        let photoAction = UIAlertAction(title: "Photo", style: .default){
+            (alert: UIAlertAction!) -> Void in
+            self.data.append(SnippetData(snippetType: .photo))
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel,
+                                         handler: nil)
+        
+        alert.addAction(textAction)
+        alert.addAction(photoAction)
+        alert.addAction(cancelAction)
+        present(alert,animated: true, completion: nil)
+        
     }
 }
 
